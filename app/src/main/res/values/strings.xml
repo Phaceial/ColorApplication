@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ColorApplication</string>
+    <string name="welcome">Welcome to my Color App. Please select a color below to change the background</string>
+    <array name="colors">
+        <item>Black</item>
+        <item>White</item>
+        <item>Light Gray</item>
+        <item>Green</item>
+        <item>Red</item>
+        <item>Dark Gray</item>
+        <item>Blue</item>
+        <item>Magenta</item>
+        <item>Gray</item>
+        <item>White</item>
+        <item>Cyan</item>
+        <item>Yellow</item>
+    </array>
+</resources>
