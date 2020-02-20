@@ -1,7 +1,11 @@
 package temple.edu.colorapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
@@ -15,10 +19,24 @@ public class ColorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner = (Spinner) findViewById(R.id.colorSpinner);
+        final Spinner spinner = (Spinner) findViewById(R.id.colorSpinner);
         String colors[] = getResources().getStringArray(R.array.colors);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors, R.layout.support_simple_spinner_dropdown_item);
+
         spinner.setAdapter(new colorAdapter(this, colors));
+        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                findViewById(R.id.colorMain).setBackgroundColor(Color.parseColor((String) spinner.getItemAtPosition(position)));
+                view.setBackgroundColor(Color.WHITE);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
 
 

@@ -1,13 +1,11 @@
 package temple.edu.colorapplication.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-
-import temple.edu.colorapplication.R;
 
 public class colorAdapter extends BaseAdapter{
 
@@ -39,6 +37,16 @@ public class colorAdapter extends BaseAdapter{
         TextView textView = new TextView(context);
 
         textView.setText(colors[position]);
+
+        return textView;
+    }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        TextView textView = new TextView(context);
+
+        textView.setText(colors[position]);
+        textView.setBackgroundColor(Color.parseColor(colors[position]));
 
         return textView;
     }
